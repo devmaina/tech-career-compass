@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenyan STEM Tech Career Compass for Young Innovators</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js and Chart.js Datalabels Plugin for rich chart text -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+    <!-- Google Fonts: Fredoka for cheerful titles & Plus Jakarta Sans for readable text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Fredoka', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif']
+                    },
+                    colors: {
+                        kenya: {
+                            green: '#008751',
+                            red: '#BA0C2F',
+                            black: '#000000',
+                            gold: '#FFC72C'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Fredoka', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 8px;
+        }
+        .stem-card {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .stem-card:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER & HERO SECTION -->
+    <header class="bg-gradient-to-r from-slate-900 via-emerald-950 to-slate-900 text-white shadow-2xl relative overflow-hidden">
+        <!-- Background glows -->
+        <div class="absolute -top-12 -right-12 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-24 -left-12 w-72 h-72 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+                <!-- Title & STEM Subtitle -->
+                <div class="text-center lg:text-left space-y-3 max-w-3xl">
+                    <div class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs sm:text-sm font-semibold px-3.5 py-1.5 rounded-full">
+                        <i class="fa-solid fa-graduation-cap text-amber-400"></i> Kenyan STEM & CBC Curriculum Aligned
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-wide text-white leading-tight">
+                        🚀 STEM-to-Tech <span class="text-amber-400">Career Compass</span>
+                    </h1>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Discover how your favorite Kenyan school subjects—like <strong class="text-emerald-300">Pre-Technical Studies, Mathematics, Agriculture, Science, and Creative Arts</strong>—open doors to exciting careers in Robotics, AI, AgriTech, Mobile Money, and Cloud Computing!
+                    </p>
+                    
+                    <!-- Creator Attribution Badge -->
+                    <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs text-slate-300">
+                        <span class="bg-white/10 px-3 py-1 rounded-lg border border-white/10 flex items-center gap-1.5 font-medium">
+                            <i class="fa-solid fa-code text-amber-400"></i>
+                            Created by <strong class="text-white">mainadev</strong> (EdTech Developer, Founder of <span class="text-emerald-400 font-semibold">Nuru</span> & <span class="text-sky-400 font-semibold">Jumbo Linux</span>)
+                        </span>
+                        <span class="bg-amber-400/20 text-amber-300 px-2.5 py-1 rounded-lg border border-amber-400/30 font-bold text-[11px]">
+                            All Rights Reserved
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Stats summary card -->
+                <div class="grid grid-cols-3 gap-3 w-full lg:w-auto bg-white/10 p-4 rounded-2xl border border-white/10 text-center backdrop-blur-md">
+                    <div class="p-2">
+                        <div class="text-2xl sm:text-3xl font-black text-emerald-400 font-heading">6</div>
+                        <div class="text-[11px] text-slate-300 font-medium mt-0.5">STEM Pillars</div>
+                    </div>
+                    <div class="p-2 border-x border-white/10">
+                        <div class="text-2xl sm:text-3xl font-black text-amber-400 font-heading">24+</div>
+                        <div class="text-[11px] text-slate-300 font-medium mt-0.5">Kenyan Tech Roles</div>
+                    </div>
+                    <div class="p-2">
+                        <div class="text-2xl sm:text-3xl font-black text-sky-400 font-heading">7</div>
+                        <div class="text-[11px] text-slate-300 font-medium mt-0.5">CBC Core Skills</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <nav class="flex flex-wrap justify-center lg:justify-start gap-2.5 mt-8 pt-5 border-t border-white/10 text-xs sm:text-sm font-semibold">
+                <button onclick="scrollToSection('stem-compass-section')" class="px-4 py-2.5 rounded-xl bg-emerald-500 text-white shadow-lg hover:bg-emerald-600 transition flex items-center gap-2">
+                    <i class="fa-solid fa-compass text-amber-300"></i> 1. The STEM Wheel
+                </button>
+                <button onclick="scrollToSection('subject-explorer')" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-emerald-500 hover:text-white transition flex items-center gap-2">
+                    <i class="fa-solid fa-book-open text-emerald-400"></i> 2. School Subjects & Jobs
+                </button>
+                <button onclick="scrollToSection('pipeline-section')" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-amber-500 hover:text-white transition flex items-center gap-2">
+                    <i class="fa-solid fa-diagram-project text-amber-400"></i> 3. Smart Farm Story
+                </button>
+                <button onclick="scrollToSection('quiz-section')" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-purple-500 hover:text-white transition flex items-center gap-2">
+                    <i class="fa-solid fa-user-astronaut text-purple-400"></i> 4. Student Tech Quiz
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12 flex-grow">
+
+        <!-- SECTION 1: BIG INTERACTIVE STEM-TO-TECH COMPASS WHEEL -->
+        <section id="stem-compass-section" class="scroll-mt-6 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/90">
+            <div class="text-center max-w-3xl mx-auto mb-8 space-y-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">
+                    Step 1: Start From What You Learn in School
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading">
+                    The STEM School Wheel to Future Tech Careers 🎯
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    You don't need to know complex jargon to start! Click any slice of the wheel below to see how school subjects turn into real jobs in Kenya and across the world.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Large Interactive Doughnut/Pie Chart -->
+                <div class="lg:col-span-6 flex flex-col items-center justify-center relative">
+                    <div class="w-full max-w-[420px] aspect-square relative p-2">
+                        <canvas id="stemCompassCanvas"></canvas>
+                    </div>
+                    <div class="mt-3 flex items-center gap-2 text-xs text-slate-500 italic bg-slate-50 px-3 py-1.5 rounded-full border border-slate-200">
+                        <i class="fa-solid fa-hand-pointer text-emerald-600 animate-bounce"></i>
+                        <span>Click any sector on the compass wheel to switch STEM pathways!</span>
+                    </div>
+                </div>
+
+                <!-- Live Active STEM Subject Details Panel -->
+                <div class="lg:col-span-6 bg-slate-50 p-6 rounded-2xl border border-slate-200/90 space-y-5">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+                        <div class="flex items-center gap-3.5">
+                            <span id="activeStemIcon" class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-2xl shadow-md">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                            </span>
+                            <div>
+                                <h3 id="activeStemTitle" class="text-2xl font-bold font-heading text-slate-900">Pre-Technical & Engineering</h3>
+                                <p id="activeStemSubject" class="text-xs text-emerald-700 font-semibold">School Subject: Pre-Technical Studies & Physics</p>
+                            </div>
+                        </div>
+                        <span id="activeJobCount" class="bg-emerald-100 text-emerald-800 text-xs font-extrabold px-3 py-1.5 rounded-full">
+                            4 Tech Careers
+                        </span>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">What You Do in School:</h4>
+                        <p id="activeStemSchoolDesc" class="text-xs sm:text-sm text-slate-700 bg-white p-3 rounded-xl border border-slate-200 leading-relaxed">
+                            Learning how materials work, tinkering with simple circuits, measuring forces, fixing gadgets, and building models.
+                        </p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">How It Becomes High-Tech:</h4>
+                        <p id="activeStemTechDesc" class="text-xs sm:text-sm text-slate-700 bg-white p-3 rounded-xl border border-slate-200 leading-relaxed">
+                            Powers physical electronics, solar-powered farm drones, robotics, internet cables, and hardware smart devices!
+                        </p>
+                    </div>
+
+                    <!-- Filtered Job Cards List -->
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Featured Careers in Kenya:</h4>
+                        <div id="stemJobsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[260px] overflow-y-auto pr-1 custom-scrollbar">
+                            <!-- Populated dynamically via JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: SCHOOL SUBJECT EXPLORER & INTEREST MATCHING -->
+        <section id="subject-explorer" class="scroll-mt-6 bg-gradient-to-br from-amber-500/10 via-emerald-500/5 to-slate-100 rounded-3xl p-6 sm:p-8 border border-amber-200/70">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-3 py-1 rounded-full">
+                        Interactive Career Explorer
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading mt-2">
+                        Find Tech Jobs by What You Love Doing! ❤️
+                    </h2>
+                    <p class="text-slate-600 text-sm max-w-2xl mt-1">
+                        Select one or more things you enjoy at school (e.g. fixing things, drawing, solving math puzzles, or working on farms):
+                    </p>
+                </div>
+                <button onclick="resetInterestFilters()" class="text-xs text-slate-700 hover:text-slate-900 bg-white border border-slate-300 font-bold px-3.5 py-2 rounded-xl shadow-sm flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-rotate-left"></i> Show All Jobs
+                </button>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div id="interestBadges" class="flex flex-wrap gap-2.5 mb-8">
+                <!-- Dynamically generated via JS -->
+            </div>
+
+            <!-- Job Cards Grid -->
+            <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                    <h3 id="compassResultTitle" class="text-sm font-bold text-slate-700 uppercase tracking-wider">Recommended Career Explorations:</h3>
+                    <span id="matchCounter" class="text-xs font-semibold text-slate-500">Showing 24 tech roles</span>
+                </div>
+                <div id="compassResultsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PIPELINE VISUALIZER - HOW TECH WORKERS COLLABORATE -->
+        <section id="pipeline-section" class="scroll-mt-6 bg-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="text-center max-w-3xl mx-auto mb-8 space-y-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950 border border-emerald-800 px-3 py-1 rounded-full">
+                    Real-World Kenyan System Integration
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-white">
+                    How Different Tech Jobs Work Together: The Smart Maize Farm 🌽📱
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base">
+                    In real life, tech specialists work as a team! Here is how students from different STEM subjects build a complete solution for a farmer in Eldoret.
+                </p>
+            </div>
+
+            <!-- Pipeline Diagram Steps -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 relative z-10">
+                <!-- Step 1 -->
+                <div class="bg-slate-800/90 border border-slate-700 p-4 rounded-2xl flex flex-col justify-between hover:border-emerald-500 transition group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-extrabold uppercase bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded">Pre-Tech Studies</span>
+                            <i class="fa-solid fa-microchip text-xl text-emerald-400 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="font-bold text-sm text-emerald-300 font-heading">1. Hardware & Sensors</h4>
+                        <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                            Pre-Tech specialists set up solar moisture sensors in the soil to measure water levels.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-700/60 text-[11px] text-emerald-400 font-bold">
+                        🛠️ IoT Hardware Technician
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-slate-800/90 border border-slate-700 p-4 rounded-2xl flex flex-col justify-between hover:border-amber-500 transition group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-extrabold uppercase bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded">Social Studies & Net</span>
+                            <i class="fa-solid fa-wifi text-xl text-amber-400 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="font-bold text-sm text-amber-300 font-heading">2. Networks & Middleware</h4>
+                        <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                            Network experts send the readings safely over mobile signals across Kenya to the cloud.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-700/60 text-[11px] text-amber-400 font-bold">
+                        🌐 Network & Systems Engineer
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-slate-800/90 border border-slate-700 p-4 rounded-2xl flex flex-col justify-between hover:border-sky-500 transition group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-extrabold uppercase bg-sky-500/20 text-sky-400 px-2 py-0.5 rounded">Pre-Tech / Cloud</span>
+                            <i class="fa-solid fa-server text-xl text-sky-400 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="font-bold text-sm text-sky-300 font-heading">3. Data Center & Servers</h4>
+                        <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                            Data Center engineers keep high-speed green cloud servers running 24/7 without overheating.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-700/60 text-[11px] text-sky-400 font-bold">
+                        🖥️ Data Center Architect
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-slate-800/90 border border-slate-700 p-4 rounded-2xl flex flex-col justify-between hover:border-purple-500 transition group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-extrabold uppercase bg-purple-500/20 text-purple-400 px-2 py-0.5 rounded">Maths & Computer</span>
+                            <i class="fa-solid fa-brain text-xl text-purple-400 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="font-bold text-sm text-purple-300 font-heading">4. AI & Data Science</h4>
+                        <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                            Data Scientists analyze weather patterns and rain forecasts to predict crop watering needs.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-700/60 text-[11px] text-purple-400 font-bold">
+                        🤖 AI & Data Scientist
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="bg-slate-800/90 border border-slate-700 p-4 rounded-2xl flex flex-col justify-between hover:border-rose-500 transition group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-extrabold uppercase bg-rose-500/20 text-rose-400 px-2 py-0.5 rounded">Creative Arts</span>
+                            <i class="fa-solid fa-mobile-screen-button text-xl text-rose-400 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h4 class="font-bold text-sm text-rose-300 font-heading">5. Mobile App & UI/UX</h4>
+                        <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                            App designers create a friendly app in English/Swahili that alerts the farmer when to irrigate.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-700/60 text-[11px] text-rose-400 font-bold">
+                        📱 Mobile UI/UX Developer
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: STUDENT TECH HERO AVATAR QUIZ -->
+        <section id="quiz-section" class="scroll-mt-6 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+            <div class="max-w-3xl mx-auto text-center space-y-2 mb-8">
+                <span class="text-xs font-bold uppercase tracking-wider text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
+                    3-Minute Student Assessment
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading">
+                    What Type of Tech Innovator Are You? 🌟
+                </h2>
+                <p class="text-slate-600 text-sm">
+                    Answer 3 simple questions based on your daily school life to generate your custom **Tech Superhero Passport** and CBC competency profile!
+                </p>
+            </div>
+
+            <div id="quizContainer" class="max-w-2xl mx-auto bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200">
+                <div id="quizStepContent">
+                    <!-- Injected dynamically via JS -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JOB DETAIL MODAL / DRAWER -->
+    <div id="jobModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto custom-scrollbar border border-slate-100">
+            <button onclick="closeJobModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div id="modalBody" class="space-y-6">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER WITH REQUIRED ATTRIBUTION -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-10 border-t border-slate-800 mt-16">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-4">
+            <div class="flex justify-center items-center gap-2 text-white font-heading text-xl font-bold">
+                <span>🇰🇪 Kenyan STEM & Tech Explorer</span>
+            </div>
+            
+            <p class="max-w-2xl mx-auto text-slate-300 text-xs sm:text-sm leading-relaxed">
+                Empowering Kenyan primary and junior secondary students (CBC Curriculum) to see how classroom subjects connect directly to real tech jobs in Agriculture, Health, Finance, Robotics, and Software.
+            </p>
+
+            <!-- Prominent Credit Box -->
+            <div class="bg-slate-800/80 border border-slate-700 max-w-xl mx-auto p-3.5 rounded-2xl text-slate-200 text-xs space-y-1 shadow-inner">
+                <div class="font-bold text-amber-400 text-sm">
+                    Credit for this compass goes to <span class="text-white">mainadev</span>
+                </div>
+                <div class="text-slate-300">
+                    All Rights Reserved • EdTech Developer and Founder of <strong class="text-emerald-400">Nuru</strong> and <strong class="text-sky-400">Jumbo Linux</strong>.
+                </div>
+            </div>
+
+            <p class="text-slate-500 pt-3 border-t border-slate-800/80 text-[11px]">
+                © 2026 Kenyan STEM Educational Career Compass
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // --- STEM CURRICULUM DATA STRUCTURES ---
+        
+        const STEM_PILLARS = [
+            {
+                id: 'pre-tech',
+                title: 'Pre-Technical & Engineering',
+                subjectName: 'Pre-Technical Studies & Physics',
+                color: '#008751', // Kenyan Green
+                icon: 'fa-screwdriver-wrench',
+                schoolDesc: 'Learning tools, electrical circuits, building models, measuring forces, and fixing simple machines in school.',
+                techDesc: 'Powers physical robotics, solar microgrids, IoT sensors, drone engineering, and computer hardware design!'
+            },
+            {
+                id: 'math-computer',
+                title: 'Mathematics & Computing',
+                subjectName: 'Mathematics & Computer Studies',
+                color: '#2563EB', // Blue
+                icon: 'fa-calculator',
+                schoolDesc: 'Solving math puzzles, algebra, geometry, learning computer basics, typing, and understanding logic.',
+                techDesc: 'Powers Artificial Intelligence (AI), Software Apps, Game Development, Data Science, and Encryption Security!'
+            },
+            {
+                id: 'agri-business',
+                title: 'Agriculture & Business',
+                subjectName: 'Agriculture, Business & Financial Literacy',
+                color: '#D97706', // Amber
+                icon: 'fa-wheat-awn',
+                schoolDesc: 'Growing crops, soil care, keeping poultry, managing money, and learning trade in local markets.',
+                techDesc: 'Powers AgriTech solar irrigation, mobile payment systems (like M-Pesa), and digital supply chain platforms!'
+            },
+            {
+                id: 'creative-arts',
+                title: 'Creative Arts & Digital Media',
+                subjectName: 'Creative Arts, Art & Craft, Languages',
+                color: '#E11D48', // Rose Red
+                icon: 'fa-palette',
+                schoolDesc: 'Drawing, sketching, music, storytelling, colors, drama, and expressing ideas clearly.',
+                techDesc: 'Powers Mobile App Design (UI/UX), 3D Game Graphics, Virtual Reality (XR), Animation, and Digital Content!'
+            },
+            {
+                id: 'integrated-science',
+                title: 'Science & Health Care',
+                subjectName: 'Integrated Science & Health Education',
+                color: '#7C3AED', // Purple
+                icon: 'fa-vial-virus',
+                schoolDesc: 'Studying the human body, plants, weather, healthy nutrition, hygiene, and environmental conservation.',
+                techDesc: 'Powers HealthTech medical scanners, telemedicine apps, biotech diagnostics, and smart weather prediction!'
+            },
+            {
+                id: 'social-infra',
+                title: 'Social Studies & Infrastructure',
+                subjectName: 'Social Studies, Citizenship & Safety',
+                color: '#0284C7', // Sky Blue
+                icon: 'fa-shield-halved',
+                schoolDesc: 'Learning about Kenyan geography, community rules, digital safety, trade, and civic responsibility.',
+                techDesc: 'Powers Data Centers, Cloud Infrastructure, Cybersecurity Defence, Satellite Networks, and Digital Governance!'
+            }
+        ];
+
+        const INTEREST_TAGS = [
+            { id: 'fixing', label: '🔧 Fixing & Building Gadgets', color: 'bg-emerald-100 text-emerald-800 border-emerald-300' },
+            { id: 'drawing', label: '🎨 Drawing & Designing Apps', color: 'bg-indigo-100 text-indigo-800 border-indigo-300' },
+            { id: 'math', label: '🧮 Solving Math & Coding Puzzles', color: 'bg-purple-100 text-purple-800 border-purple-300' },
+            { id: 'farming', label: '🌾 Agriculture & Farm Tech', color: 'bg-amber-100 text-amber-800 border-amber-300' },
+            { id: 'health', label: '🏥 Caring for Health & Doctors', color: 'bg-rose-100 text-rose-800 border-rose-300' },
+            { id: 'money', label: '💳 Money, Apps & Business', color: 'bg-green-100 text-green-800 border-green-300' },
+            { id: 'detective', label: '🛡️ Safety & Digital Cyber Secrets', color: 'bg-sky-100 text-sky-800 border-sky-300' }
+        ];
+
+        const CAREERS = [
+            // Pre-Technical & Engineering
+            {
+                id: 'robotics-engineer',
+                stemId: 'pre-tech',
+                title: 'Robotics & Automation Engineer',
+                icon: 'fa-robot',
+                shortDesc: 'Builds mechanical arms and smart automated machines.',
+                fullDesc: 'Robotics engineers combine circuits, motors, and code to build physical machines that harvest crops, assemble solar panels, or help in modern factories.',
+                dayInLife: 'Programming a solar-powered robotic arm that sorts tea leaves in Kericho!',
+                schoolSubjects: ['Pre-Technical Studies', 'Mathematics', 'Physics Basics'],
+                cbcCompetencies: ['Critical Thinking', 'Problem Solving', 'Digital Literacy'],
+                kenyaContext: 'Automating grain sorters or building solar farm drones in Eldoret.',
+                tags: ['fixing', 'math']
+            },
+            {
+                id: 'iot-hardware-tech',
+                stemId: 'pre-tech',
+                title: 'IoT Electronics Technician',
+                icon: 'fa-microchip',
+                shortDesc: 'Connects sensors and microchips like Arduino and Raspberry Pi.',
+                fullDesc: 'Assembles electronic sensors that read temperature, soil moisture, or water level, and sends the data over wireless signals.',
+                dayInLife: 'Installing a solar soil-moisture sensor in a Nakuru greenhouse farm.',
+                schoolSubjects: ['Pre-Technical Studies', 'Integrated Science'],
+                cbcCompetencies: ['Self-Efficacy', 'Creativity & Imagination', 'Digital Literacy'],
+                kenyaContext: 'Deploying smart IoT water meters in Nairobi residential estates.',
+                tags: ['fixing', 'farming']
+            },
+            {
+                id: 'drone-engineer',
+                stemId: 'pre-tech',
+                title: 'Agri-Drone Flight Engineer',
+                icon: 'fa-plane-fly',
+                shortDesc: 'Builds and repairs autonomous flying drones for mapping farms.',
+                fullDesc: 'Drone engineers design lightweight aerial robots with cameras to inspect large sugarcane or coffee plantations from high above.',
+                dayInLife: 'Testing propellers and GPS flight routes for crop spraying drones.',
+                schoolSubjects: ['Pre-Technical Studies', 'Mathematics', 'Geography'],
+                cbcCompetencies: ['Problem Solving', 'Digital Literacy'],
+                kenyaContext: 'Flying spray drones across tea plantations in Mt. Kenya region.',
+                tags: ['fixing', 'farming']
+            },
+            {
+                id: 'renewable-energy-tech',
+                stemId: 'pre-tech',
+                title: 'Solar & Clean Energy Tech Specialist',
+                icon: 'fa-solar-panel',
+                shortDesc: 'Installs smart solar mini-grids that power off-grid schools and pumps.',
+                fullDesc: 'Combines electrical engineering with software to manage solar storage batteries and smart microgrids across rural communities.',
+                dayInLife: 'Connecting smart inverter meters to a solar school in Turkana.',
+                schoolSubjects: ['Pre-Technical Studies', 'Integrated Science'],
+                cbcCompetencies: ['Citizenship', 'Self-Efficacy'],
+                kenyaContext: 'Powering off-grid digital learning centers with solar energy.',
+                tags: ['fixing']
+            },
+
+            // Mathematics & Computing
+            {
+                id: 'ai-specialist',
+                stemId: 'math-computer',
+                title: 'AI & Machine Learning Specialist',
+                icon: 'fa-brain',
+                shortDesc: 'Teaches computers to recognize patterns, images, and Swahili words.',
+                fullDesc: 'AI Specialists write smart computer algorithms that can identify crop diseases from photos, translate local languages, or answer student queries.',
+                dayInLife: 'Training an AI model to detect leaf rust disease from smartphone photos.',
+                schoolSubjects: ['Mathematics', 'Computer Studies', 'English / Swahili'],
+                cbcCompetencies: ['Critical Thinking', 'Digital Literacy', 'Problem Solving'],
+                kenyaContext: 'Developing AI tools that speak Swahili and local dialects for health clinics.',
+                tags: ['math', 'detective']
+            },
+            {
+                id: 'game-developer',
+                stemId: 'math-computer',
+                title: 'Video Game & XR Developer',
+                icon: 'fa-gamepad',
+                shortDesc: 'Codes fun 2D and 3D games with physics and storytelling.',
+                fullDesc: 'Game developers turn ideas into interactive virtual worlds using code, math logic, and graphics engines.',
+                dayInLife: 'Designing a 3D superhero game featuring Kenyan wildlife and testing gravity math!',
+                schoolSubjects: ['Mathematics', 'Computer Studies', 'Creative Arts'],
+                cbcCompetencies: ['Creativity & Imagination', 'Digital Literacy'],
+                kenyaContext: 'Designing educational revision games for Kenyan school tablets.',
+                tags: ['drawing', 'math']
+            },
+            {
+                id: 'data-scientist',
+                stemId: 'math-computer',
+                title: 'Big Data Detective',
+                icon: 'fa-chart-line',
+                shortDesc: 'Uncovers hidden trends and insights inside huge piles of numbers.',
+                fullDesc: 'Analyzes weather data, traffic patterns, or sales numbers to help leaders make smart decisions with colorful graphs.',
+                dayInLife: 'Analyzing Nairobi Matatu routes to schedule electric buses efficiently.',
+                schoolSubjects: ['Mathematics', 'Computer Studies', 'Social Studies'],
+                cbcCompetencies: ['Critical Thinking', 'Learning to Learn'],
+                kenyaContext: 'Predicting rainfall trends for Kenya Meteorological Department.',
+                tags: ['math', 'money']
+            },
+            {
+                id: 'software-engineer',
+                stemId: 'math-computer',
+                title: 'Full-Stack Software Developer',
+                icon: 'fa-code',
+                shortDesc: 'Builds websites, web apps, and digital platforms.',
+                fullDesc: 'Writes clean code to build interactive web tools used by millions of people every day.',
+                dayInLife: 'Coding an online homework submission portal for schools.',
+                schoolSubjects: ['Computer Studies', 'Mathematics', 'Languages'],
+                cbcCompetencies: ['Digital Literacy', 'Problem Solving'],
+                kenyaContext: 'Building e-learning portals like Nuru for Kenyan students.',
+                tags: ['math', 'fixing']
+            },
+
+            // Agriculture & Business
+            {
+                id: 'agritech-innovator',
+                stemId: 'agri-business',
+                title: 'Smart AgriTech Innovator',
+                icon: 'fa-seedling',
+                shortDesc: 'Combines farming with sensors, solar pumps, and satellite images.',
+                fullDesc: 'Uses digital technology to help smallholder farmers grow more food while conserving water and fertilizer.',
+                dayInLife: 'Analyzing satellite crop maps to tell farmers when to fertilize maize.',
+                schoolSubjects: ['Agriculture', 'Integrated Science', 'Pre-Technical'],
+                cbcCompetencies: ['Problem Solving', 'Creativity & Imagination'],
+                kenyaContext: 'Empowering tea and coffee farmers with smart soil sensors.',
+                tags: ['farming', 'fixing']
+            },
+            {
+                id: 'fintech-engineer',
+                stemId: 'agri-business',
+                title: 'FinTech Mobile Money Engineer',
+                icon: 'fa-wallet',
+                shortDesc: 'Designs fast, safe digital wallet systems and mobile payments.',
+                fullDesc: 'FinTech engineers make buying, saving, and transferring money instant and safe without needing cash.',
+                dayInLife: 'Adding new tap-to-pay features for school canteens and bus transport.',
+                schoolSubjects: ['Mathematics', 'Business Studies', 'Computer Studies'],
+                cbcCompetencies: ['Financial Literacy', 'Digital Literacy'],
+                kenyaContext: 'Enhancing mobile wallet gateways like M-Pesa used across East Africa.',
+                tags: ['money', 'math']
+            },
+            {
+                id: 'e-commerce-architect',
+                stemId: 'agri-business',
+                title: 'Digital Market Supply Specialist',
+                icon: 'fa-cart-flatbed',
+                shortDesc: 'Connects farm harvests directly to city shops using mobile apps.',
+                fullDesc: 'Builds digital marketplaces so farmers get fair prices without middlemen.',
+                dayInLife: 'Optimizing truck delivery routes for fresh tomatoes from Naivasha to Nairobi.',
+                schoolSubjects: ['Business Studies', 'Agriculture', 'Mathematics'],
+                cbcCompetencies: ['Financial Literacy', 'Communication'],
+                kenyaContext: 'Connecting fresh produce platforms like Twiga Foods across Kenya.',
+                tags: ['farming', 'money']
+            },
+
+            // Creative Arts & Digital Media
+            {
+                id: 'ui-ux-designer',
+                stemId: 'creative-arts',
+                title: 'Mobile App UI/UX Designer',
+                icon: 'fa-pen-ruler',
+                shortDesc: 'Designs beautiful, easy-to-use screens and buttons for mobile apps.',
+                fullDesc: 'UI/UX designers make sure apps are visually stunning, colorful, and easy for everyone to navigate.',
+                dayInLife: 'Drawing colorful icons and screen layouts for a student revision app.',
+                schoolSubjects: ['Creative Arts', 'Art & Craft', 'Languages'],
+                cbcCompetencies: ['Creativity & Imagination', 'Communication'],
+                kenyaContext: 'Designing friendly Swahili interfaces for rural phone users.',
+                tags: ['drawing']
+            },
+            {
+                id: '3d-animator',
+                stemId: 'creative-arts',
+                title: '3D Educational Animator',
+                icon: 'fa-film',
+                shortDesc: 'Creates animated 3D cartoons that teach science and history.',
+                fullDesc: 'Animators bring cartoon characters to life to explain science topics like the water cycle or human anatomy in fun video lessons.',
+                dayInLife: 'Animating a 3D elephant cartoon explaining photosynthesis to pupils.',
+                schoolSubjects: ['Creative Arts', 'Integrated Science', 'Computer Studies'],
+                cbcCompetencies: ['Creativity & Imagination', 'Digital Literacy'],
+                kenyaContext: 'Creating animated Kenyan STEM video cartoons for schools.',
+                tags: ['drawing']
+            },
+            {
+                id: 'digital-content-creator',
+                stemId: 'creative-arts',
+                title: 'STEM Digital Storyteller',
+                icon: 'fa-clapperboard',
+                shortDesc: 'Produces fun videos and graphics to make science easy to learn.',
+                fullDesc: 'Uses storytelling, video editing, and graphic design to spread tech knowledge across schools and online.',
+                dayInLife: 'Editing a 2-minute video on how solar panels work for kids.',
+                schoolSubjects: ['Creative Arts', 'Languages', 'Social Studies'],
+                cbcCompetencies: ['Communication', 'Digital Literacy'],
+                kenyaContext: 'Publishing STEM innovation stories across Kenyan digital platforms.',
+                tags: ['drawing']
+            },
+
+            // Science & Health Care
+            {
+                id: 'healthtech-specialist',
+                stemId: 'integrated-science',
+                title: 'Telemedicine HealthTech Pioneer',
+                icon: 'fa-heart-pulse',
+                shortDesc: 'Uses portable gadgets & apps to help doctors treat remote patients.',
+                fullDesc: 'HealthTech innovators build solar portable heart scanners and video apps connecting patients in villages to specialist doctors in Nairobi.',
+                dayInLife: 'Testing a portable ultrasound scanner that plugs into a phone.',
+                schoolSubjects: ['Integrated Science', 'Health Education', 'Computer Studies'],
+                cbcCompetencies: ['Citizenship', 'Problem Solving'],
+                kenyaContext: 'Connecting rural health dispensaries in Turkana to doctors in Nairobi.',
+                tags: ['health', 'fixing']
+            },
+            {
+                id: 'biotech-researcher',
+                stemId: 'integrated-science',
+                title: 'Digital BioTech Explorer',
+                icon: 'fa-dna',
+                shortDesc: 'Uses computers to analyze plant DNA and breed drought-resistant seeds.',
+                fullDesc: 'Combines biology with computers to develop strong crops that thrive during dry seasons in Arid and Semi-Arid Lands (ASAL).',
+                dayInLife: 'Comparing seed DNA sequences on a computer screen.',
+                schoolSubjects: ['Integrated Science', 'Mathematics', 'Agriculture'],
+                cbcCompetencies: ['Critical Thinking', 'Problem Solving'],
+                kenyaContext: 'Developing drought-tolerant maize seeds for Ukambani farmers.',
+                tags: ['health', 'farming']
+            },
+
+            // Social Studies & Infrastructure
+            {
+                id: 'data-center-architect',
+                stemId: 'social-infra',
+                title: 'Green Cloud Data Center Architect',
+                icon: 'fa-server',
+                shortDesc: 'Builds supercomputer server rooms powered by geothermal energy.',
+                fullDesc: 'Data Center architects build giant air-conditioned server rooms that store internet files, cloud apps, and games safely 24/7.',
+                dayInLife: 'Inspecting high-speed fiber cables in a geothermal cloud center in Naivasha.',
+                schoolSubjects: ['Pre-Technical Studies', 'Social Studies', 'Integrated Science'],
+                cbcCompetencies: ['Digital Literacy', 'Self-Efficacy'],
+                kenyaContext: 'Powering East African cloud data hubs with clean geothermal energy.',
+                tags: ['fixing', 'detective']
+            },
+            {
+                id: 'cybersecurity-defender',
+                stemId: 'social-infra',
+                title: 'Cybersecurity Guardian',
+                icon: 'fa-user-shield',
+                shortDesc: 'Protects school portals, mobile money, and websites from digital intruders.',
+                fullDesc: 'Cyber guardians act like digital detectives, testing locks, stopping scams, and keeping private info safe.',
+                dayInLife: 'Hunting for digital loopholes and teaching students strong password habits.',
+                schoolSubjects: ['Computer Studies', 'Social Studies', 'Mathematics'],
+                cbcCompetencies: ['Critical Thinking', 'Citizenship', 'Digital Literacy'],
+                kenyaContext: 'Protecting school records and M-Pesa accounts from online fraud.',
+                tags: ['detective', 'math']
+            }
+        ];
+
+        // Global State
+        let activeStemId = 'pre-tech';
+        let selectedInterests = [];
+        let stemChartInstance = null;
+
+        window.onload = function() {
+            initStemChart();
+            renderStemDetails('pre-tech');
+            renderInterestBadges();
+            renderCompassResults();
+            initQuiz();
+        };
+
+        // --- SECTION 1: CHART.JS COMPASS WHEEL ---
+        function initStemChart() {
+            const ctx = document.getElementById('stemCompassCanvas').getContext('2d');
+            
+            const labels = STEM_PILLARS.map(p => p.title);
+            const data = STEM_PILLARS.map(p => CAREERS.filter(c => c.stemId === p.id).length || 1);
+            const colors = STEM_PILLARS.map(p => p.color);
+
+            stemChartInstance = new Chart(ctx, {
+                type: 'doughnut',
+                plugins: [ChartDataLabels],
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: colors,
+                        borderWidth: 4,
+                        borderColor: '#ffffff',
+                        hoverOffset: 16
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'bottom',
+                            labels: {
+                                font: { family: 'Plus Jakarta Sans', size: 11, weight: '700' },
+                                boxWidth: 12,
+                                padding: 12
+                            }
+                        },
+                        datalabels: {
+                            color: '#ffffff',
+                            font: { family: 'Fredoka', weight: 'bold', size: 11 },
+                            formatter: (value, ctx) => {
+                                const title = STEM_PILLARS[ctx.dataIndex].title;
+                                return title.split(' ')[0]; // Show first word inside slice
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const pillar = STEM_PILLARS[context.dataIndex];
+                                    return ` ${pillar.title} (${pillar.subjectName})`;
+                                }
+                            }
+                        }
+                    },
+                    onClick: (event, activeElements) => {
+                        if (activeElements.length > 0) {
+                            const index = activeElements[0].index;
+                            const pillar = STEM_PILLARS[index];
+                            activeStemId = pillar.id;
+                            renderStemDetails(pillar.id);
+                        }
+                    }
+                }
+            });
+        }
+
+        function renderStemDetails(stemId) {
+            const pillar = STEM_PILLARS.find(p => p.id === stemId);
+            if (!pillar) return;
+
+            activeStemId = stemId;
+
+            document.getElementById('activeStemTitle').innerText = pillar.title;
+            document.getElementById('activeStemSubject').innerText = `School Subject: ${pillar.subjectName}`;
+            document.getElementById('activeStemSchoolDesc').innerText = pillar.schoolDesc;
+            document.getElementById('activeStemTechDesc').innerText = pillar.techDesc;
+
+            const iconBox = document.getElementById('activeStemIcon');
+            iconBox.style.backgroundColor = pillar.color;
+            iconBox.innerHTML = `<i class="fa-solid ${pillar.icon}"></i>`;
+
+            const jobs = CAREERS.filter(c => c.stemId === stemId);
+            document.getElementById('activeJobCount').innerText = `${jobs.length} Tech Careers`;
+
+            const grid = document.getElementById('stemJobsGrid');
+            grid.innerHTML = '';
+
+            jobs.forEach(job => {
+                const card = document.createElement('div');
+                card.className = "bg-white p-3.5 rounded-xl border border-slate-200 hover:border-emerald-500 hover:shadow-md transition cursor-pointer flex flex-col justify-between group stem-card";
+                card.onclick = () => openJobModal(job.id);
+
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="w-8 h-8 rounded-lg bg-slate-100 group-hover:bg-emerald-100 group-hover:text-emerald-700 text-slate-700 flex items-center justify-center text-sm transition">
+                                <i class="fa-solid ${job.icon}"></i>
+                            </span>
+                            <span class="text-[10px] bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-md font-bold">Inspect Role</span>
+                        </div>
+                        <h5 class="font-bold text-slate-900 text-xs sm:text-sm group-hover:text-emerald-700 font-heading leading-snug">${job.title}</h5>
+                        <p class="text-[11px] text-slate-500 mt-1 line-clamp-2">${job.shortDesc}</p>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // --- SECTION 2: INTEREST EXPLORER LOGIC ---
+        function renderInterestBadges() {
+            const container = document.getElementById('interestBadges');
+            container.innerHTML = '';
+
+            INTEREST_TAGS.forEach(tag => {
+                const isSelected = selectedInterests.includes(tag.id);
+                const btn = document.createElement('button');
+                btn.className = `px-3.5 py-2 rounded-xl text-xs font-bold border transition flex items-center gap-2 ${
+                    isSelected ? 'bg-slate-900 text-white border-slate-900 shadow-md' : `${tag.color} hover:shadow-sm`
+                }`;
+                btn.onclick = () => toggleInterestTag(tag.id);
+                btn.innerHTML = `
+                    <span>${tag.label}</span>
+                    ${isSelected ? '<i class="fa-solid fa-circle-check text-amber-400"></i>' : ''}
+                `;
+                container.appendChild(btn);
+            });
+        }
+
+        function toggleInterestTag(tagId) {
+            if (selectedInterests.includes(tagId)) {
+                selectedInterests = selectedInterests.filter(id => id !== tagId);
+            } else {
+                selectedInterests.push(tagId);
+            }
+            renderInterestBadges();
+            renderCompassResults();
+        }
+
+        function resetInterestFilters() {
+            selectedInterests = [];
+            renderInterestBadges();
+            renderCompassResults();
+        }
+
+        function renderCompassResults() {
+            const grid = document.getElementById('compassResultsGrid');
+            const counter = document.getElementById('matchCounter');
+            grid.innerHTML = '';
+
+            let filtered = CAREERS;
+            if (selectedInterests.length > 0) {
+                filtered = CAREERS.filter(career => 
+                    career.tags.some(tag => selectedInterests.includes(tag))
+                );
+            }
+
+            counter.innerText = `Showing ${filtered.length} matching tech roles`;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full bg-white p-8 rounded-2xl text-center border border-dashed border-slate-300">
+                        <i class="fa-solid fa-compass-drafting text-4xl text-slate-300 mb-2"></i>
+                        <p class="text-sm font-bold text-slate-700">No exact match for this filter combination!</p>
+                        <p class="text-xs text-slate-500 mt-1">Try unselecting some tags to view more tech roles.</p>
+                        <button onclick="resetInterestFilters()" class="mt-4 text-xs bg-amber-500 text-white font-bold px-4 py-2 rounded-xl shadow hover:bg-amber-600 transition">View All Roles</button>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(career => {
+                const stemPillar = STEM_PILLARS.find(p => p.id === career.stemId);
+                const card = document.createElement('div');
+                card.className = "bg-white p-5 rounded-2xl border border-slate-200/90 hover:shadow-lg hover:-translate-y-0.5 transition flex flex-col justify-between";
+                
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold text-white" style="background-color: ${stemPillar.color}">
+                                ${stemPillar.title}
+                            </span>
+                            <span class="text-slate-400 text-base">
+                                <i class="fa-solid ${career.icon}"></i>
+                            </span>
+                        </div>
+                        <h4 class="font-extrabold text-base text-slate-900 font-heading leading-snug">${career.title}</h4>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">${career.shortDesc}</p>
+                    </div>
+
+                    <div class="mt-4 pt-3 border-t border-slate-100 space-y-2">
+                        <div class="text-[11px] text-slate-500 font-medium">
+                            <strong class="text-slate-700">School Subject:</strong> ${career.schoolSubjects[0]}
+                        </div>
+                        <button onclick="openJobModal('${career.id}')" class="w-full text-center bg-slate-50 hover:bg-slate-900 hover:text-white text-slate-800 text-xs font-bold py-2 rounded-xl border border-slate-200 transition">
+                            Explore Career Passport <i class="fa-solid fa-arrow-right ml-1 text-[10px]"></i>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // --- MODAL POPUP FUNCTIONALITY ---
+        function openJobModal(careerId) {
+            const career = CAREERS.find(c => c.id === careerId);
+            if (!career) return;
+
+            const pillar = STEM_PILLARS.find(p => p.id === career.stemId);
+            const modalBody = document.getElementById('modalBody');
+
+            modalBody.innerHTML = `
+                <div class="flex items-start gap-4 border-b border-slate-100 pb-4">
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl text-white shadow-lg flex-shrink-0" style="background-color: ${pillar.color}">
+                        <i class="fa-solid ${career.icon}"></i>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-md text-white" style="background-color: ${pillar.color}">
+                            ${pillar.title}
+                        </span>
+                        <h3 class="text-2xl font-extrabold text-slate-900 font-heading mt-1">${career.title}</h3>
+                        <p class="text-xs text-slate-500 font-medium mt-0.5">${career.shortDesc}</p>
+                    </div>
+                </div>
+
+                <div class="space-y-1.5 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-emerald-700">🎯 The Role Mission</h5>
+                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">${career.fullDesc}</p>
+                </div>
+
+                <div class="space-y-1.5 bg-amber-500/10 p-4 rounded-2xl border border-amber-200/50">
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-amber-800">☀️ A Fun Day on the Job</h5>
+                    <p class="text-xs sm:text-sm text-slate-800 leading-relaxed font-medium">"${career.dayInLife}"</p>
+                </div>
+
+                <div class="space-y-1.5 bg-sky-500/10 p-4 rounded-2xl border border-sky-200/50">
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-sky-800">🇰🇪 Kenya Innovation Example</h5>
+                    <p class="text-xs sm:text-sm text-slate-800 leading-relaxed font-medium">${career.kenyaContext}</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                        <h6 class="text-[11px] font-bold text-slate-900 uppercase mb-2">📚 School Subjects Needed</h6>
+                        <div class="flex flex-wrap gap-1.5">
+                            ${career.schoolSubjects.map(sub => `<span class="bg-white border border-slate-200 text-slate-700 text-[10px] font-semibold px-2 py-0.5 rounded-md">${sub}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                        <h6 class="text-[11px] font-bold text-slate-900 uppercase mb-2">🌟 Kenya CBC Competencies</h6>
+                        <div class="flex flex-wrap gap-1.5">
+                            ${career.cbcCompetencies.map(comp => `<span class="bg-emerald-100 text-emerald-900 text-[10px] font-semibold px-2 py-0.5 rounded-md">${comp}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('jobModal').classList.remove('hidden');
+        }
+
+        function closeJobModal() {
+            document.getElementById('jobModal').classList.add('hidden');
+        }
+
+        // --- SECTION 4: STUDENT QUIZ LOGIC ---
+        const QUIZ_QUESTIONS = [
+            {
+                question: "1. What is your absolute favorite thing to do in school?",
+                options: [
+                    { text: "Fixing tools, tinkering with circuits, or building craft models", tag: "fixing", icon: "fa-screwdriver-wrench" },
+                    { text: "Drawing cartoons, painting, or designing creative charts", tag: "drawing", icon: "fa-palette" },
+                    { text: "Solving algebra puzzles, math drills, or playing computer games", tag: "math", icon: "fa-calculator" },
+                    { text: "Planting crops, gardening, or taking care of farm animals", tag: "farming", icon: "fa-wheat-awn" }
+                ]
+            },
+            {
+                question: "2. If you had KSh 10,000 to spend on a school tech project, what would you build?",
+                options: [
+                    { text: "A solar-powered farm robot that pulls weeds automatically", tag: "fixing", icon: "fa-robot" },
+                    { text: "An AI phone app that helps doctors diagnose sick patients", tag: "health", icon: "fa-heart-pulse" },
+                    { text: "A super secure mobile payment app for buying snacks", tag: "money", icon: "fa-wallet" },
+                    { text: "A 3D superhero video game set in Nairobi city!", tag: "drawing", icon: "fa-gamepad" }
+                ]
+            },
+            {
+                question: "3. Which school subject makes you feel most proud when you get high marks?",
+                options: [
+                    { text: "Pre-Technical Studies & Integrated Science", tag: "fixing", icon: "fa-vial" },
+                    { text: "Mathematics & Computer Studies", tag: "math", icon: "fa-laptop-code" },
+                    { text: "Creative Arts, Art & Craft", tag: "drawing", icon: "fa-paint-brush" },
+                    { text: "Agriculture & Business Studies", tag: "farming", icon: "fa-seedling" }
+                ]
+            }
+        ];
+
+        let quizIndex = 0;
+        let quizAnswers = [];
+
+        function initQuiz() {
+            quizIndex = 0;
+            quizAnswers = [];
+            renderQuizStep();
+        }
+
+        function renderQuizStep() {
+            const container = document.getElementById('quizStepContent');
+            if (!container) return;
+
+            if (quizIndex < QUIZ_QUESTIONS.length) {
+                const q = QUIZ_QUESTIONS[quizIndex];
+                container.innerHTML = `
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between text-xs font-bold text-slate-400">
+                            <span>Question ${quizIndex + 1} of ${QUIZ_QUESTIONS.length}</span>
+                            <div class="flex gap-1.5">
+                                ${QUIZ_QUESTIONS.map((_, idx) => `
+                                    <span class="w-7 h-1.5 rounded-full ${idx === quizIndex ? 'bg-purple-600' : idx < quizIndex ? 'bg-purple-300' : 'bg-slate-200'}"></span>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <h3 class="text-lg sm:text-xl font-bold font-heading text-slate-900 text-center">${q.question}</h3>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            ${q.options.map((opt) => `
+                                <button onclick="answerQuiz('${opt.tag}')" class="p-4 rounded-2xl border border-slate-200 bg-white hover:border-purple-500 hover:bg-purple-50/50 transition text-left flex items-start gap-3 group shadow-sm">
+                                    <span class="w-9 h-9 rounded-xl bg-slate-100 text-slate-600 group-hover:bg-purple-600 group-hover:text-white flex items-center justify-center text-sm transition flex-shrink-0">
+                                        <i class="fa-solid ${opt.icon}"></i>
+                                    </span>
+                                    <span class="text-xs sm:text-sm font-semibold text-slate-800 leading-snug">${opt.text}</span>
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            } else {
+                renderQuizResult();
+            }
+        }
+
+        function answerQuiz(tag) {
+            quizAnswers.push(tag);
+            quizIndex++;
+            renderQuizStep();
+        }
+
+        function renderQuizResult() {
+            const tagCounts = {};
+            quizAnswers.forEach(t => tagCounts[t] = (tagCounts[t] || 0) + 1);
+            let topTag = 'fixing';
+            let maxCount = 0;
+            for (let t in tagCounts) {
+                if (tagCounts[t] > maxCount) {
+                    maxCount = tagCounts[t];
+                    topTag = t;
+                }
+            }
+
+            const matchedCareer = CAREERS.find(c => c.tags.includes(topTag)) || CAREERS[0];
+            const pillar = STEM_PILLARS.find(p => p.id === matchedCareer.stemId);
+
+            const container = document.getElementById('quizStepContent');
+            container.innerHTML = `
+                <div class="text-center space-y-6 animate-fade-in">
+                    <div class="inline-flex items-center justify-center w-20 h-20 rounded-3xl text-white text-3xl shadow-xl mx-auto" style="background-color: ${pillar.color}">
+                        <i class="fa-solid ${matchedCareer.icon}"></i>
+                    </div>
+
+                    <div class="space-y-1">
+                        <span class="text-xs font-extrabold uppercase text-purple-700 bg-purple-100 px-3.5 py-1 rounded-full">
+                            Your Tech Hero Match
+                        </span>
+                        <h3 class="text-2xl font-extrabold text-slate-900 font-heading">${matchedCareer.title}</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 max-w-md mx-auto">${matchedCareer.shortDesc}</p>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-2xl border border-slate-200 text-left space-y-3">
+                        <h5 class="text-xs font-bold text-slate-900 uppercase tracking-wider">🌟 Your Kenyan STEM Superpower Profile:</h5>
+                        <div class="grid grid-cols-2 gap-2 text-xs">
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                <strong class="text-slate-700 block text-[10px]">Top CBC Competencies:</strong>
+                                <span class="text-slate-600 font-medium">${matchedCareer.cbcCompetencies.join(', ')}</span>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                <strong class="text-slate-700 block text-[10px]">School Subject Key:</strong>
+                                <span class="text-slate-600 font-medium">${matchedCareer.schoolSubjects.join(', ')}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <button onclick="openJobModal('${matchedCareer.id}')" class="bg-purple-600 text-white font-bold text-xs px-5 py-2.5 rounded-xl hover:bg-purple-700 transition shadow">
+                            View Career Passport <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                        <button onclick="initQuiz()" class="bg-slate-200 text-slate-700 font-bold text-xs px-4 py-2.5 rounded-xl hover:bg-slate-300 transition">
+                            Retake Assessment <i class="fa-solid fa-rotate-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Smooth scroll helper
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
